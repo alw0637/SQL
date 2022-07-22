@@ -1,0 +1,26 @@
+----Create a pet store database
+CREATE TABLE Products (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, in_stock TEXT);
+INSERT INTO Products VALUES (1, "cat_food", 10, "y");
+INSERT INTO Products Values (2, "catnip", 5, "y");
+INSERT INTO Products VALUES (3, "cat_litter", 30, "n");
+INSERT INTO Products Values (4, "cat toys", 1, "y");
+INSERT INTO Products Values (5, "cat brush", 5, "n");
+INSERT INTO Products Values (6, "food bowl", 3, "n");
+INSERT INTO Products Values (7, "pet shampoo", 12, "y");
+INSERT INTO Products Values (8, "pet bed", 30, "n");
+INSERT INTO Products Values (9, "lint roller", 9, "n");
+INSERT INTO Products Values (10, "laser pointer", 2, "y");
+INSERT INTO Products Values (11, "nail clippers", 15, "y");
+INSERT INTO Products Values (12, "cat treats", 2, "y");
+INSERT INTO Products Values (13, "cat tree", 60, "y");
+INSERT INTO Products Values (14, "electric razor", 30, "y");
+INSERT INTO Products Values (15, "water dispenser", 20, "y");
+
+----Display products priced below $20, sorted by price
+SELECT * FROM Products WHERE price < 20 ORDER BY price;
+
+----Display all products, sorted by price
+SELECT * FROM Products ORDER BY price;
+
+----How many in stock and out of stock items are listed in the database?
+SELECT in_stock, COUNT(*) FROM Products GROUP BY in_stock;
